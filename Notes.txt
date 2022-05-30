@@ -1,0 +1,15 @@
+HTML & CSS Project
+-------------------
+
+1 => Download Normalize Css To Render Your Elements
+2 => Choose Work Sans As A Main Font , The Weights Are :
+     a. ExtraLight 200 
+     b. Light      300
+     c. Regular    400
+     d. Medium     500
+     e. Semibold   600
+     f. Bold       700
+     g. Extrabold  800
+3 => Download Awesome Font Library And Copy The WebFonts And
+     Put It next to Css Folder
+4 =>
