@@ -1,6 +1,34 @@
 /* Start Global Variables */
+:root {
+    --maincolor: #10CAB7;
+    --secondcolor: #F6F6F6;
+    --mainpadding: 60px;
+}
 /* End Global Variables */
-
+/* Start Components */
+.special-heading {
+    font-size: 100px;
+    font-weight: 800;
+    color: #EBECED;
+    text-align: center;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: 60px;
+    }
+    .special-heading {
+        margin-top: -20px;
+    }
+}
+/* End Components */
 /* Start Global Rules ====================================================*/
 * {
     -webkit-box-sizing: border-box;
@@ -36,7 +64,6 @@ body {
     }
 }
 /* End Global Rules ====================================================*/
-
 /* Start Header ====================================================*/
 .header {
     padding: 20px;
@@ -67,46 +94,163 @@ body {
 }
 .header .container .links .icon span:nth-child(2) {
     width: 60%;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 .header .container .links:hover .icon span:nth-child(2) {
     width: 100%;
 }
 .header .container .links ul {
-    background-color: #F6F6F6;
-    list-style: none;
     padding: 0;
-    transition: 0.3s;
+    margin: 0;
+    list-style: none;
+    background-color: var(--secondcolor);
+    min-width: 200px;
+    display: none;
     position: absolute;
     right: 0;
-    display: none;
-    min-width: 200px;
+    top: calc(100% + 15px);
 }
 .header .container .links ul::before {
     content: "";
     border: 10px solid;
-    border-color: transparent transparent #F6F6F6 transparent;
+    border-color: transparent transparent var(--secondcolor) transparent;
     position: absolute;
     top: -20px;
     right: 0;
+    /*  */
 }
 .header .container .links:hover ul {
     display: block;
 }
-.header .container .links ul li a { 
-    display: block;
-    padding: 15px;
-    text-decoration: none;
+.header .container .links ul li {
+    /* padding: 15px; */
+}
+.header .container .links ul li a {
     color: #333333;
+    display: block;
+    text-decoration: none;
+    padding: 15px;
     transition: 0.3s;
 }
-.header .container .links ul li:not(:last-child) a {
-    border-bottom: 1px solid #dddddd;
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid #DDDDDD;
 }
 .header .container .links ul li a:hover {
     padding-left: 25px;
-}
+} 
 /* End Header ====================================================*/
 /* Start Section ====================================================*/
+.landing {
+    background-image: url("../Images/Landing1.jpg");
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+    z-index:-1;
+}
+.landing .container .text {
+    position: absolute;
+    width: 320px;
+    max-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.landing .container .text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--maincolor);
+    margin: 0;
+}
+.landing .container .text p {
+    color: #333333;
+    font-size: 19px;
+    line-height: 1.8;
+}
 /* End Section ====================================================*/
+/* Start Features ====================================================*/
+.features {
+    padding: var(--mainpadding) 0;
+    background-color: var(--secondcolor);
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 20px;
+}
+.features .container .feat {
+    padding: 20px;
+    text-align: center;
+}
+.features .container .feat i {
+    color: var(--maincolor);
+}
+.features .container .feat h3 {
+    margin: 30px 0;
+    font-weight: 800;
+}
+.features .container .feat p {
+    line-height: 1.8;
+    color: #777777;
+    font-size: 17px;
+}
+/* End Features ====================================================*/
+/* Start Services ================================================== */
+.services {
+    padding: var(--mainpadding);
+}
+.services .container .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.services .container .services-content .col .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+    .services .services-content .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .container .services-content .col .srv i {
+    color: var(--maincolor);
+    flex-basis: 60px;
+}
+.services .container .services-content .col .srv .text {
+    flex: 1;
+}
+.services .container .services-content .col .srv .text h3 {
+    margin: 0 0 20px;
+}
+.services .container .services-content .col .srv .text p {
+    color: #444444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .container .services-content .col .image {
+    position: relative;
+    text-align: center;
+}
+.services .container .services-content .col .image::before {
+    content: "";
+    background-color: #2C4755;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+.services .container .services-content .col .image img {
+    width: 260px;
 
+}
+@media (max-width: 1199px) {
+    .services .container .services-content .col .image img {
+        display: none;
+    }
+}
+/* End Services ==================================================== */
